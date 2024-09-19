@@ -2,71 +2,99 @@
 <body>
     <div class="hero-section">
         <div class="hero-msg">You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. <a href="#"> Click here to go to amazon.in</a></div>  
-      </div>
-      <div class="shop-section">
-        <div class="box1 box">
-            <div class="box-content"><br>
-            <h2>Phone</h2><br>
-            <div class="box1-image"></div>
-            <br>
-            <a href="#">See more</a>
+    </div>
+
+    <div class="main">
+        <div class="products-grid js-products-grid">
+            <div class="product-container ">
+                <div class="product-image-container">
+                  <img class="product-image"
+                    src=${public\images\products\fit.jpg}`>
+                    <!-- src="${product.image}"> -->
+                </div>
+                <div class="product-name limit-text-to-2-lines">
+                 ${product.name}
+                </div>
+                <div class="product-rating-container">
+                  <img class="product-rating-stars"
+                    src="images/ratings/rating-${product.rating.stars * 10}.png">
+                  <div class="product-rating-count link-primary">
+                    ${
+                      product.rating.count
+                    }
+                  </div>
+                </div>
+                <div class="product-price">
+                  $${formatCurrency(product.priceCents)}
+                </div>
+                <div class="product-quantity-container">
+                  <select class="js-quantity-selector-${product.id}">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+                <div class="product-spacer"></div>
+                <div class="added-to-cart js-added-to-cart-${product.id}">
+                  <img src="images/icons/checkmark.png">
+                  Added
+                </div>
+                <button class="add-to-cart-button button-primary js-add-to-cart" 
+                data-product-id="${product.id}">
+                  Add to Cart
+                </button>
+            </div>
+            <div class="product-container ">
+                <div class="product-image-container">
+                  <img class="product-image"
+                    src="${product.image}">
+                </div>
+                <div class="product-name limit-text-to-2-lines">
+                 ${product.name}
+                </div>
+                <div class="product-rating-container">
+                  <img class="product-rating-stars"
+                    src="images/ratings/rating-${product.rating.stars * 10}.png">
+                  <div class="product-rating-count link-primary">
+                    ${
+                      product.rating.count
+                    }
+                  </div>
+                </div>
+                <div class="product-price">
+                  $${formatCurrency(product.priceCents)}
+                </div>
+                <div class="product-quantity-container">
+                  <select class="js-quantity-selector-${product.id}">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+                <div class="product-spacer"></div>
+                <div class="added-to-cart js-added-to-cart-${product.id}">
+                  <img src="images/icons/checkmark.png">
+                  Added
+                </div>
+                <button class="add-to-cart-button button-primary js-add-to-cart" 
+                data-product-id="${product.id}">
+                  Add to Cart
+                </button>
             </div>
         </div>
-        <div class="box2 box">
-            <div class="box-content"><br>
-                <h2>Beauty piks</h2><br>
-                <div class="box2-image"></div>
-                <br>
-                <a href="#">See more</a>
-                </div>
-        </div>
-        <div class="box3 box">
-            <div class="box-content"><br>
-                <h2>Shop Pet supplies</h2><br>
-                <div class="box3-image"></div>
-                <br>
-                <a href="#">See more</a>
-                </div>
-        </div>
-        <div class="box4 box">
-            <div class="box-content"><br>
-                <h2>Discover fashion trends</h2><br>
-                <div class="box4-image"></div>
-                <br>
-                <a href="#">See more</a>
-                </div>
-        </div>
-        <div class="box5 box">
-            <div class="box-content"><br>
-                <h2>Home & care</h2><br>
-                <div class="box5-image"></div>
-                <br>
-                <a href="#">See more</a>
-                </div>
-        </div>
-        <div class="box6 box">
-            <div class="box-content"><br>
-                <h2>Health & Presnol care</h2><br>
-                <div class="box6-image"></div>
-                <br>
-                <a href="#">See more</a>
-                </div>
-        </div>
-        <div class="box7 box">
-            <div class="box-content"><br>
-                <h2>For your Fitness Needs</h2><br>
-                <div class="box7-image"></div>
-                <br>
-                <a href="#">Shop now</a>
-                </div>
-        </div>
-        <div class="box8 box">
-            <div class="box-content"><br>
-                <h2>Create with strip lights</h2><br>
-                <div class="box8-image"></div>
-                <br>
-                <a href="#">Shop now</a>
-                </div>
-        </div>
-      </div>
+    </div>
 </body>

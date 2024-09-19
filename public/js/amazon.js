@@ -1,8 +1,8 @@
 console.log('I am from amazon.js top');
-// import {cart,addToCart,updateCartQuantity, calculateCartQuantity} from "./products";
+import {cart,addToCart,updateCartQuantity, calculateCartQuantity} from "./products";
 import { products } from "products.js";
-// import { products } from "/js/products.js";
-// import { formatCurrency } from "js/money.js";
+import { products } from "/js/products.js";
+import { formatCurrency } from "js/money.js";
 let productsHTML = '';
 products.forEach((product) => {
   productsHTML += `
@@ -53,16 +53,16 @@ products.forEach((product) => {
   `;
 });
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
-// document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
-//     button.addEventListener('click',()=>{
-//       const {productId} = button.dataset;
-//       addToCart(productId);
-//       updateCartQuantity(productId);      
-//     });
-//   });
-// if (calculateCartQuantity() === 0 ) { 
-//   document.querySelector('.js-cart-quantity').innerHTML = '';
-//   } else { document.querySelector('.js-cart-quantity').innerHTML = calculateCartQuantity(); };
-//   console.log("hye");
+document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
+    button.addEventListener('click',()=>{
+      const {productId} = button.dataset;
+      addToCart(productId);
+      updateCartQuantity(productId);      
+    });
+  });
+if (calculateCartQuantity() === 0 ) { 
+  document.querySelector('.js-cart-quantity').innerHTML = '';
+  } else { document.querySelector('.js-cart-quantity').innerHTML = calculateCartQuantity(); };
+  console.log("hye");
 
 console.log("i am from amazon.js file bottom");

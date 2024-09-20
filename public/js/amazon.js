@@ -1,8 +1,6 @@
-// import {cart,addToCart,updateCartQuantity, calculateCartQuantity} from "./products";
+import {cart,addToCart,updateCartQuantity, calculateCartQuantity} from "/js/cart.js";
 import { products } from "/js/products.js";
-// import { formatCurrency } from "./money.js";
-function formatCurrency(priceCents){
-  return (priceCents / 100).toFixed(2);}
+import { formatCurrency } from "/js/money.js";
 let productsHTML = '';
 products.forEach((product) => {
   productsHTML += `

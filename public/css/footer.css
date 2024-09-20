@@ -9,9 +9,12 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: underline #37475a;
 }
 .foot-panell:hover{
   background-color: #485769;
+  text-decoration: underline #485769;
+
 }
 .foot-panell2{
   background-color:#222f3d;

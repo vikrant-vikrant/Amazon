@@ -13,6 +13,10 @@ app.get("/amazon",(req,res)=>{
   res.render("listings/amazon.ejs");
 });
 
+app.get("/checkout",(req,res)=>{
+  res.render("listings/checkout.ejs");
+});
+
 app.listen(8000,()=>{
   console.log("App is listening on port 8000");
 });

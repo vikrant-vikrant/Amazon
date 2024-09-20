@@ -53,13 +53,13 @@ products.forEach((product) => {
   `;
 });
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
-// document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
-//     button.addEventListener('click',()=>{
-//       const {productId} = button.dataset;
-//       addToCart(productId);
-//       updateCartQuantity(productId);      
-//     });
-//   });
-// if (calculateCartQuantity() === 0 ) { 
-//   document.querySelector('.js-cart-quantity').innerHTML = '';
-//   } else { document.querySelector('.js-cart-quantity').innerHTML = calculateCartQuantity(); };
+document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
+    button.addEventListener('click',()=>{
+      const {productId} = button.dataset;
+      addToCart(productId);
+      updateCartQuantity(productId);      
+    });
+  });
+if (calculateCartQuantity() === 0 ) { 
+  document.querySelector('.js-cart-quantity').innerHTML = '';
+  } else { document.querySelector('.js-cart-quantity').innerHTML = calculateCartQuantity(); };

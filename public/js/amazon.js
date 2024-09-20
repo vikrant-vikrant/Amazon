@@ -1,8 +1,8 @@
 console.log('I am from amazon.js top');
 import {cart,addToCart,updateCartQuantity, calculateCartQuantity} from "./products";
 import { products } from "products.js";
-import { products } from "/js/products.js";
-import { formatCurrency } from "js/money.js";
+import { products } from "./js/products.js";
+import { formatCurrency } from "./money.js";
 let productsHTML = '';
 products.forEach((product) => {
   productsHTML += `

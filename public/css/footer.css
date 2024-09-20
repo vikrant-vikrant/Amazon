@@ -37,8 +37,8 @@ ul p{
   font-weight: 600;
 }
 ul a{
-  font-size: 15px;
-  margin-top: 1rem;
+  font-size: 1rem;
+  margin-top: .8rem;
   color: #dddddd;
 }
 ul a:hover{
@@ -62,11 +62,11 @@ ul a:hover{
 .panel4{
   background-color: #131a22;
   color: white;
-  font-size: 15px;
+  font-size: 12px;
   text-align: center;
 }
 .pages{
-  padding-top: 25px;
+  padding-top: 15px;
 }
 .pages a{
   text-decoration: none;
@@ -78,5 +78,5 @@ ul a:hover{
 }
 .copyright{
   padding-top: 5px;
-  padding-bottom: 25px;
+  padding-bottom: 15px;
 }

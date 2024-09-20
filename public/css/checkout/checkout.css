@@ -1,10 +1,11 @@
 /* CHECKOUT HEADER  */
 .checkout-header {
-  height: 60px;
+  height: 40px;
   padding-left: 30px;
   padding-right: 30px;
-  background-color: white;
-
+  /* background-color: white; */
+  background-color: rgb(154, 144, 144);
+  margin-top: 100px;
   display: flex;
   justify-content: center;
 
@@ -23,11 +24,11 @@
   align-items: center;
 }
 
-.checkout-header-left-section {
+/* .checkout-header-left-section {
   width: 150px;
-}
+} */
 
-.amazon-logo {
+/* .amazon-logo {
   width: 100px;
   margin-top: 12px;
 }
@@ -35,11 +36,6 @@
 .amazon-mobile-logo {
   display: none;
 }
-
-/* @media is used to create responsive design (making the
-   website look good on any screen size). This @media
-   means when the screen width is 575px or less, different
-   styles (inside the {...}) will be applied. */
 @media (max-width: 575px) {
   .checkout-header-left-section {
     width: auto;
@@ -54,7 +50,7 @@
     height: 35px;
     margin-top: 5px;
   }
-}
+} */
 
 .checkout-header-middle-section {
   flex: 1;
@@ -104,17 +100,11 @@
 }
 /* CHECKOUT CONTENT  */
 .main {
-  max-width: 1100px;
+  /* max-width: 1100px;
   padding-left: 30px;
-  padding-right: 30px;
-
-  margin-top: 140px;
-  margin-bottom: 100px;
-
-  /* margin-left: auto;
-     margin-right auto;
-     Is a trick for centering an element horizontally
-     without needing a container. */
+  padding-right: 30px; */
+  margin-top: 150px;
+  /* margin-bottom: 100px; */
   margin-left: auto;
   margin-right: auto;
 }
@@ -127,13 +117,8 @@
 
 .checkout-grid {
   display: grid;
-  /* Here, 1fr means the first column will take
-     up the remaining space in the grid. */
   grid-template-columns: 1fr 350px;
   column-gap: 12px;
-
-  /* Use align-items: start; to prevent the elements
-     in the grid from stretching vertically. */
   align-items: start;
 }
 
@@ -164,10 +149,6 @@
 
 @media (max-width: 1000px) {
   .payment-summary {
-    /* grid-row: 1 means this element will be placed into row
-      1 in the grid. (Normally, the row that an element is
-      placed in is determined by the order of the elements in
-      the HTML. grid-row overrides this default ordering). */
     grid-row: 1;
     margin-bottom: 12px;
   }
@@ -183,9 +164,6 @@
 
 .cart-item-details-grid {
   display: grid;
-  /* 100px 1fr 1fr; means the 2nd and 3rd column will
-     take up half the remaining space in the grid
-     (they will divide up the remaining space evenly). */
   grid-template-columns: 100px 1fr 1fr;
   column-gap: 25px;
 }
@@ -200,11 +178,6 @@
 .product-image {
   max-width: 100%;
   max-height: 120px;
-
-  /* margin-left: auto;
-     margin-right auto;
-     Is a trick for centering an element horizontally
-     without needing a container. */
   margin-left: auto;
   margin-right: auto;
 }
@@ -226,15 +199,6 @@
 
 @media (max-width: 1000px) {
   .delivery-options {
-    /* grid-column: 1 means this element will be placed
-       in column 1 in the grid. (Normally, the column that
-       an element is placed in is determined by the order
-       of the elements in the HTML. grid-column overrides
-       this default ordering).
-       
-       / span 2 means this element will take up 2 columns
-       in the grid (Normally, each element takes up 1
-       column in the grid). */
     grid-column: 1 / span 2;
   }
 }
@@ -275,9 +239,6 @@
 
 .payment-summary-row {
   display: grid;
-  /* 1fr auto; means the width of the 2nd column will be
-     determined by the elements inside the column (auto).
-     The 1st column will take up the remaining space. */
   grid-template-columns: 1fr auto;
 
   font-size: 15px;

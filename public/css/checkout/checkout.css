@@ -56,22 +56,11 @@
     margin-right: 5px;
   }
 }
-
-.checkout-header-right-section {
-  text-align: right;
-  width: 150px;
-}
-
-@media (max-width: 1000px) {
-  .checkout-header-right-section {
-    width: auto;
-  }
-}
 /* CHECKOUT CONTENT  */
 .main {
-  /* max-width: 1100px; */
-  /* padding-left: 30px; */
-  /* padding-right: 30px; */
+  max-width: 1100px;
+  padding-left: 30px;
+  padding-right: 30px;
   margin-top: 1rem;
   /* margin-bottom: 100px; */
   margin-left: auto;

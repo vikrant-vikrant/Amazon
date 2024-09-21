@@ -99,7 +99,11 @@ document.querySelectorAll('.js-delete-link').forEach((link)=>{
 updateCartQuantity();
 function updateCartQuantity(){
   const cartQuantity = calculateCartQuantity();
-document.querySelector('.js-return-to-home-link').innerHTML =`${cartQuantity} items`;
+  if(cartQuantity === 0){
+    document.querySelector('.js-return-to-home-link').innerHTML =`Add items`;
+  }else{
+    document.querySelector('.js-return-to-home-link').innerHTML =`${cartQuantity} items`;
+  }
 };
 document.querySelectorAll('.js-update-link').forEach((link)=>{
   link.addEventListener('click',()=>{
@@ -123,3 +127,6 @@ document.querySelectorAll('.js-update-link').forEach((link)=>{
       quantityLabel.innerHTML = newQuantity;
   });
 });
+if (calculateCartQuantity() === 0 ) { 
+document.querySelector('.js-cart-quantity').innerHTML = '';
+} else { document.querySelector('.js-cart-quantity').innerHTML = calculateCartQuantity(); };

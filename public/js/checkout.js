@@ -102,8 +102,10 @@ function updateCartQuantity(){
   const cartQuantity = calculateCartQuantity();
   if(cartQuantity === 0){
     document.querySelector('.js-return-to-home-link').innerHTML =`Add items`;
+    document.querySelector('.page-title').innerHTML =`Your Amazon Cart is empty.`;
   }else{
     document.querySelector('.js-return-to-home-link').innerHTML =`${cartQuantity} items`;
+    document.querySelector('.page-title').innerHTML =`Review your order`;
   }
 };
 document.querySelectorAll('.js-update-link').forEach((link)=>{

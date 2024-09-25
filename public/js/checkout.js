@@ -103,9 +103,11 @@ function updateCartQuantity(){
   if(cartQuantity === 0){
     document.querySelector('.js-return-to-home-link').innerHTML =`Add items`;
     document.querySelector('.page-title').innerHTML =`Your Amazon Cart is empty.`;
+    document.querySelector('.js-cart-quantity').innerHTML = '';
   }else{
     document.querySelector('.js-return-to-home-link').innerHTML =`${cartQuantity} items`;
     document.querySelector('.page-title').innerHTML =`Review your order`;
+    document.querySelector('.js-cart-quantity').innerHTML = calculateCartQuantity();
   }
 };
 document.querySelectorAll('.js-update-link').forEach((link)=>{
@@ -130,9 +132,6 @@ document.querySelectorAll('.js-update-link').forEach((link)=>{
       quantityLabel.innerHTML = newQuantity;
   });
 });
-if (calculateCartQuantity() === 0 ) { 
-document.querySelector('.js-cart-quantity').innerHTML = '';
-} else { document.querySelector('.js-cart-quantity').innerHTML = calculateCartQuantity(); };
 
 // document.querySelectorAll('.js-delivery-option')
 //   .forEach((element)=>{

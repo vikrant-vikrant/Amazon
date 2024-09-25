@@ -3,7 +3,7 @@
   height: 40px;
   padding-left: 30px;
   padding-right: 30px;
-  background-color: white;
+  background-color: #eaeded;
   margin-top: 100px;
   display: flex;
   justify-content: center;
@@ -74,6 +74,9 @@
   align-items: start;
   padding-left: 8rem;
   padding-right: 8rem;
+}
+.main{
+  background-color: #eaeded;
 
 }
 
@@ -92,6 +95,7 @@
   border: 1px solid rgb(222, 222, 222);
   border-radius: 4px;
   padding: 18px;
+  background-color: #fff;
 }
 
 .cart-item-container {

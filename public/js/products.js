@@ -1,5 +1,80 @@
 export const products = [
   {
+    id: "e43608ze-6aa0-4b85-b27f-e1d07eb67z16",
+    image: "images/products/Chanakya Neeti.jpg",
+    name: "Chanakya Neeti with Chanakya Sutra Sahit",
+    rating: {
+      stars: 4.5,
+      count: 197
+    },
+    priceCents: 1190,
+    keywords: [
+      "book",
+      "Chanakya Neeti",
+      "sutra"
+    ]
+  },
+  {
+    id: "e43638ye-6aa0-4b85-b27f-e1d07eb67z16",
+    image: "images/products/sh.jpg",
+    name: "Shoonya Se Aakhir Tak ",
+    rating: {
+      stars: 4.5,
+      count: 197
+    },
+    priceCents: 690,
+    keywords: [
+      "book",
+      "Shoonya Se Aakhir Tak ",
+      "noval"
+    ]
+  },
+  {
+    id: "e43638ze-6aa0-4b85-b27f-e1d07eb67z16",
+    image: "images/products/pitaji.jpg",
+    name: "Pitaji Aur Tarikh",
+    rating: {
+      stars: 4.5,
+      count: 147
+    },
+    priceCents: 790,
+    keywords: [
+      "book",
+      "father",
+      "noval"
+    ]
+  },
+  {
+    id: "e43638ce-6aa0-4b85-b27f-e1d07eb67z16",
+    image: "images/products/gandhi.jpg",
+    name: "The Story of My Experiments With Truth: Mahatma Gandhi, An Autobiography (Hindi)",
+    rating: {
+      stars: 4.5,
+      count: 217
+    },
+    priceCents: 990,
+    keywords: [
+      "book",
+      "gandhi",
+      "autobiography"
+    ]
+  },
+  {
+    id: "e43638ce-6aa0-4b85-b27f-e1d07eb67zz6",
+    image: "images/products/yogi.jpg",
+    name: "Autobiography of A Yogi (Hindi)",
+    rating: {
+      stars: 4.5,
+      count: 117
+    },
+    priceCents: 1090,
+    keywords: [
+      "book",
+      "yogi",
+      "autobiography"
+    ]
+  },
+  {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: "images/products/athletic-cotton-socks-6-pairs.jpg",
     name: "Black and Gray Athletic Cotton Socks - 6 Pairs",

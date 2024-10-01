@@ -1,20 +1,19 @@
-// import { cart } from '../cart';
 import {cart} from '/js/cart.js';
 import {getProduct } from "/js/products.js";
-
+import {getDeliveryOption } from '/js/deliveryOptions.js';
 
 export function renderPaymentSummary(){
   let productPriceCents = 0;
+  let shippingPriceCents = 0;
   cart.forEach((cartItem) => {
     const product = getProduct(cartItem.productId);
-    productPriceCents += product.priceCents * cart.quantity;
+    productPriceCents += product.priceCents * cartItem.quantity;
 
-    console.log(product.priceCents);
-    // cart product quantity is not working properly 
-    // console.log(cart.length);
-    // console.log(cart[0].quantity);
-    for(let i = 0;i<=cart.length-1;i++){
-      console.log(cart[i].quantity)
-    }
+    // unable to calculate shipping cost 
+    // const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
+    // shippingPriceCents += deliveryOption.priceCents;
   });
+    console.log(productPriceCents);
+    // console.log(shippingPriceCents);
+
 }

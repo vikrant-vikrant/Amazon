@@ -4,7 +4,7 @@ import { cart,removeFromCart,
 import {getProduct } from "/js/products.js";
 import { formatCurrency } from "/js/money.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
-import {deliveryOptions} from '/js/deliveryOptions.js';
+import {deliveryOptions,getDeliveryOption} from '/js/deliveryOptions.js';
 
 export function renderOrderSummary(){
   let cartSummaryHtml = '';
@@ -12,12 +12,7 @@ export function renderOrderSummary(){
     const productId = cartItem.productId;
     const matchingProduct = getProduct(productId);
     const deliveryOptionId = cartItem.deliveryOptionId;
-    let deliveryOption = '';
-    deliveryOptions.forEach((option) => {
-      if(option.id === deliveryOptionId){
-        deliveryOption = option;
-      }
-    });
+    const deliveryOption = getDeliveryOption(deliveryOptionId);
     const dateString = dayjs().add(1,'days').format('dddd, D MMMM');
     cartSummaryHtml += `
       <div class="cart-item-container js-cart-item-container-${matchingProduct.id}">

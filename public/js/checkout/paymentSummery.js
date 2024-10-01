@@ -9,11 +9,10 @@ export function renderPaymentSummary(){
     const product = getProduct(cartItem.productId);
     productPriceCents += product.priceCents * cartItem.quantity;
 
-    // unable to calculate shipping cost 
-    // const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
-    // shippingPriceCents += deliveryOption.priceCents;
+    const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
+    shippingPriceCents += deliveryOption.priceCents;
   });
     console.log(productPriceCents);
-    // console.log(shippingPriceCents);
-
+    // shippingPriceCents giving us Nan or 0 may be the deliveryoptions are not able to reach to them
+    console.log(shippingPriceCents);
 }

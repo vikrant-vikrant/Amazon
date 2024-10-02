@@ -25,7 +25,7 @@
   font-size: 1.5rem;
 }
 .location a{
-  padding-left: 0px;
+  padding-left: .6rem;
 }
 
 @media (max-width: 800px) {
@@ -45,11 +45,13 @@
 
 .header-link:hover {
    cursor: pointer;
+   border: 1px solid white;
 }
 
 .amazon-logo {
   width: 100px;
   margin-top: 5px;
+  padding: 0px;
 }
 
 .amazon-mobile-logo {
@@ -122,18 +124,25 @@ select{
 }
 .orders-link {
   color: white;
+  /* display: flex; */
 }
 
 .returns-text {
   display: block;
   font-size: 13px;
 }
+/* .india{
+  margin-left: 20px;
+} */
 
 .orders-text {
   display: block;
   font-size: 15px;
   font-weight: 700;
 }
+/* .deliver-order-text{
+  margin-left: 20px;
+} */
 
 .cart-link {
   color: white;
@@ -188,8 +197,9 @@ body{
   border: 2px solid transparent;
   margin-left: 2.2rem;
 }
-.panel-ops,.panel-opstion p:hover{
+.panel-ops:hover , .panel-opstion p:hover{
   cursor: pointer;
+  text-decoration: 1px underline;
 }
 .panel-opstion p{
   display: inline;

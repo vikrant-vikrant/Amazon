@@ -1,7 +1,7 @@
 .hero-section{
-    background-image: url(/images/hero.jpg);
+    background-image: url(/images/hero1.jpg);
     background-size: cover;
-    height: 350px;
+    height: 280px;
     display: flex;
     justify-content: center;
     align-items: flex-end;

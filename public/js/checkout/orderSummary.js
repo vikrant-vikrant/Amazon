@@ -122,6 +122,7 @@ export function renderOrderSummary(){
         updateQuantity(productId,newQuantity);
         const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
         quantityLabel.innerHTML = newQuantity;
+        renderOrderSummary();
     });
   });
 
@@ -130,7 +131,7 @@ export function renderOrderSummary(){
       element.addEventListener('click',()=>{
         const {productId,deliveryOptionId} = element.dataset;
         updateDeliveryOption(productId,deliveryOptionId);
-        renderOrderSummary();
+        // renderOrderSummary();
       });
     });
 }

@@ -5,6 +5,7 @@ import {getProduct } from "/js/products.js";
 import { formatCurrency } from "/js/money.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import {deliveryOptions,getDeliveryOption} from '/js/deliveryOptions.js';
+import {renderPaymentSummary} from './paymentSummery.js';
 
 export function renderOrderSummary(){
   let cartSummaryHtml = '';
@@ -96,10 +97,14 @@ export function renderOrderSummary(){
       document.querySelector('.js-return-to-home-link').innerHTML =`Add items`;
       document.querySelector('.page-title').innerHTML =`Your Amazon Cart is empty.`;
       document.querySelector('.js-cart-quantity').innerHTML = '';
+      document.querySelector('.js-cart-summary-quantity').innerHTML = 'Items (0) :';
+      document.querySelector('.js-cart-summary-total').innerHTML = '$0.00';
     }else{
       document.querySelector('.js-return-to-home-link').innerHTML =`${cartQuantity} items`;
       document.querySelector('.page-title').innerHTML =`Review your order`;
       document.querySelector('.js-cart-quantity').innerHTML = calculateCartQuantity();
+      document.querySelector('.js-cart-summary-quantity').innerHTML = `Items (${calculateCartQuantity()}) :`;
+      document.querySelector('.js-cart-summary-total').innerHTML = `$${formatCurrency(renderPaymentSummary().productPriceCents)}`;
     }
   };
   document.querySelectorAll('.js-update-link').forEach((link)=>{

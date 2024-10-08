@@ -136,6 +136,8 @@ export function renderOrderSummary(){
       element.addEventListener('click',()=>{
         const {productId,deliveryOptionId} = element.dataset;
         updateDeliveryOption(productId,deliveryOptionId);
+        // console.log(deliveryOptionId);
+        // console.log(cart);
         // renderOrderSummary();
       });
     });

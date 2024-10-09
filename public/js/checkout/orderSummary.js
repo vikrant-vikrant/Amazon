@@ -1,6 +1,6 @@
 import { cart,removeFromCart,
   calculateCartQuantity,
-  updateQuantity,updateDeliveryOption} from "/js/cart.js";
+  updateQuantity} from "/js/cart.js";
 import {getProduct } from "/js/products.js";
 import { formatCurrency } from "/js/money.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
@@ -130,15 +130,4 @@ export function renderOrderSummary(){
         renderOrderSummary();
     });
   });
-
-  document.querySelectorAll('.js-delivery-option')
-    .forEach((element)=>{
-      element.addEventListener('click',()=>{
-        const {productId,deliveryOptionId} = element.dataset;
-        updateDeliveryOption(productId,deliveryOptionId);
-        // console.log(deliveryOptionId);
-        // console.log(cart);
-        // renderOrderSummary();
-      });
-    });
 }

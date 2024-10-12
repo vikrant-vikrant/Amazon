@@ -1,7 +1,6 @@
 import {cart} from '/js/cart.js';
 import {getProduct } from "/js/products.js";
 import {getDeliveryOption } from '/js/deliveryOptions.js';
-//use formatCurrency in orderSummary bcz its also there we dont need to import it again here
 import {formatCurrency} from '/js/money.js'
 
 export function renderPaymentSummary(){

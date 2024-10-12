@@ -1,10 +1,7 @@
-import { cart,removeFromCart,
-  calculateCartQuantity,saveToStorage,
-  updateQuantity} from "/js/cart.js";
+import { cart,removeFromCart,calculateCartQuantity,updateQuantity} from "/js/cart.js";
 import {getProduct } from "/js/products.js";
 import { formatCurrency } from "/js/money.js";
-import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
-import {deliveryOptions,getDeliveryOption} from '/js/deliveryOptions.js';
+import {deliveryOptions,calculateDeliveryDate} from '/js/deliveryOptions.js';
 import {renderPaymentSummary} from './paymentSummery.js';
 
 export function renderOrderSummary(){
@@ -12,9 +9,7 @@ export function renderOrderSummary(){
   cart.forEach((cartItem)=>{
     const productId = cartItem.productId;
     const matchingProduct = getProduct(productId);
-    const deliveryOptionId = cartItem.deliveryOptionId;
-    const deliveryOption = getDeliveryOption(deliveryOptionId);
-    const dateString = dayjs().add(1,'days').format('dddd, D MMMM');
+    const dateString = calculateDeliveryDate(7);
     cartSummaryHtml += `
       <div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
         <div class="delivery-date">
@@ -57,7 +52,7 @@ export function renderOrderSummary(){
   function deliveryOptionsHTML(matchingProduct,cartItem){
     let html = '';
     deliveryOptions.forEach((option) => {
-      const dateString = dayjs().add(option.deliveryDays,'days').format('dddd, D MMMM');
+      const dateString = calculateDeliveryDate(option.deliveryDays);
       const priceString = option.priceCents === 0?'FREE':`$${formatCurrency(option.priceCents)} `;
       const isChecked = option.id === cartItem.deliveryOptionsId;
       html += `
@@ -92,17 +87,23 @@ export function renderOrderSummary(){
   function updateCartQuantity(){
     const cartQuantity = calculateCartQuantity();
     if(cartQuantity === 0){
-      document.querySelector('.js-return-to-home-link').innerHTML =`Add items`;
+      document.querySelector('.js-return-to-home-link').innerHTML =`Add Items`;
       document.querySelector('.page-title').innerHTML =`Your Amazon Cart is empty.`;
       document.querySelector('.js-cart-quantity').innerHTML = '';
       document.querySelector('.js-cart-summary-quantity').innerHTML = 'Items (0) :';
       document.querySelector('.js-cart-summary-total').innerHTML = '$0.00';
+      document.querySelector('.js-total-before-tax').innerHTML = '$0.00';
+      document.querySelector('.js-extimated-tax').innerHTML = '$0.00';
+      document.querySelector('.js-order-total').innerHTML = '$0.00';
     }else{
-      document.querySelector('.js-return-to-home-link').innerHTML =`${cartQuantity} items`;
+      document.querySelector('.js-return-to-home-link').innerHTML =`${cartQuantity} Items`;
       document.querySelector('.page-title').innerHTML =`Review your order`;
       document.querySelector('.js-cart-quantity').innerHTML = calculateCartQuantity();
       document.querySelector('.js-cart-summary-quantity').innerHTML = `Items (${calculateCartQuantity()}) :`;
       document.querySelector('.js-cart-summary-total').innerHTML = `$${formatCurrency(renderPaymentSummary().productPriceCents)}`;
+      document.querySelector('.js-total-before-tax').innerHTML = `$${formatCurrency(renderPaymentSummary().productPriceCents)}`;
+      document.querySelector('.js-extimated-tax').innerHTML = `$${formatCurrency((renderPaymentSummary().productPriceCents)/10)}`;
+      document.querySelector('.js-order-total').innerHTML = `$${formatCurrency(renderPaymentSummary().productPriceCents + (renderPaymentSummary().productPriceCents/10))}`;
     }
   };
   document.querySelectorAll('.js-update-link').forEach((link)=>{

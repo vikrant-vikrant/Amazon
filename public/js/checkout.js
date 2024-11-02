@@ -1,5 +1,5 @@
 import {renderOrderSummary} from './checkout/orderSummary.js';
-import './cart-opp.js';
+import './cart-class.js';
 
 renderOrderSummary();
 

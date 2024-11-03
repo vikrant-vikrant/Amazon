@@ -8,6 +8,13 @@ export function getProduct(productId){
     return matchingProduct;
 };
 
+class Product(productDetails) {
+  id
+  image
+  name
+  rating
+  priceCents;
+}
 export const products = [
   {
     id: "e43608ze-6aa0-4b85-b27f-e1d07eb67z16",
@@ -825,4 +832,7 @@ export const products = [
       "chair",
     ]
   }
-];
+].map((productDetails)=>{
+  return new Product(productDetails);
+});
+console.log(products);

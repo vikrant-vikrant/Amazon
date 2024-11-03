@@ -89,8 +89,8 @@ class Cart {
   }
 }
 
-const cart = new Cart();
-const BusinessCart = new Cart();
+const cart = new Cart('cart-oop');
+const BusinessCart = new Cart('cart-business');
 
 BusinessCart.localStoragekey = 'cart-oop';
 BusinessCart.loadFromStorage();

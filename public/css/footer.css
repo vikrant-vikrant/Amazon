@@ -1,4 +1,4 @@
-.foot-panell{
+.foot-panell {
   height: 50px;
   background-color: #37475a;
   color: white;
@@ -8,43 +8,42 @@
   align-items: center;
   text-decoration: underline #37475a;
 }
-.foot-panell:hover{
+.foot-panell:hover {
   background-color: #485769;
   text-decoration: underline #485769;
-
 }
-.foot-panell2{
-  background-color:#222f3d;
+.foot-panell2 {
+  background-color: #222f3d;
   height: 300px;
   color: white;
   display: flex;
   justify-content: space-evenly;
 }
-.panel2{
+.panel2 {
   background-color: #222f3d;
   color: white;
   display: flex;
   justify-content: space-evenly;
 }
-.panel2 ul a{
+.panel2 ul a {
   cursor: pointer;
 }
-ul{
+ul {
   margin-top: 4rem;
 }
-ul p{
+ul p {
   font-size: 1.5rem;
   font-weight: 600;
 }
-ul a{
+ul a {
   font-size: 1rem;
-  margin-top: .8rem;
+  margin-top: 0.8rem;
   color: #dddddd;
 }
-ul a:hover{
+ul a:hover {
   text-decoration: underline;
 }
-.panel3{
+.panel3 {
   background-color: #222f3d;
   color: white;
   /* border-top: 0.5px solid white; */
@@ -53,29 +52,29 @@ ul a:hover{
   justify-content: center;
   align-items: center;
 }
-.logo img{
+.logo img {
   background-size: cover;
   height: 45px;
   width: 120px;
 }
-.panel4{
+.panel4 {
   background-color: #131a22;
   color: white;
   font-size: 12px;
   text-align: center;
 }
-.pages{
+.pages {
   padding-top: 15px;
 }
-.pages a{
+.pages a {
   text-decoration: none;
   color: white;
   margin-left: 2rem;
 }
-.pages a:hover{
+.pages a:hover {
   text-decoration: underline;
 }
-.copyright{
+.copyright {
   padding-top: 5px;
   padding-bottom: 15px;
 }

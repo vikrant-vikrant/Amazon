@@ -1,7 +1,11 @@
-import {addToCart,updateCartQuantity, calculateCartQuantity} from "/js/cart.js";
+import {
+  addToCart,
+  updateCartQuantity,
+  calculateCartQuantity,
+} from "/js/cart.js";
 import { products } from "/js/products.js";
 import { formatCurrency } from "/js/money.js";
-let productsHTML = '';
+let productsHTML = "";
 products.forEach((product) => {
   productsHTML += `
     <div class="product-container ">
@@ -16,9 +20,7 @@ products.forEach((product) => {
             <img class="product-rating-stars"
               src="${product.getStarsUrl()}">
             <div class="product-rating-count link-primary">
-              ${
-                product.rating.count
-              }
+              ${product.rating.count}
             </div>
           </div>
           <div class="product-price">
@@ -51,14 +53,17 @@ products.forEach((product) => {
         </div>
   `;
 });
-document.querySelector('.js-products-grid').innerHTML = productsHTML;
-document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
-    button.addEventListener('click',()=>{
-      const {productId} = button.dataset;
-      addToCart(productId);
-      updateCartQuantity(productId);      
-    });
+document.querySelector(".js-products-grid").innerHTML = productsHTML;
+document.querySelectorAll(".js-add-to-cart").forEach((button) => {
+  button.addEventListener("click", () => {
+    const { productId } = button.dataset;
+    addToCart(productId);
+    updateCartQuantity(productId);
   });
-if (calculateCartQuantity() === 0 ) { 
-  document.querySelector('.js-cart-quantity').innerHTML = '';
-  } else { document.querySelector('.js-cart-quantity').innerHTML = calculateCartQuantity(); };
+});
+if (calculateCartQuantity() === 0) {
+  document.querySelector(".js-cart-quantity").innerHTML = "";
+} else {
+  document.querySelector(".js-cart-quantity").innerHTML =
+    calculateCartQuantity();
+}

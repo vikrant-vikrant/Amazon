@@ -4,7 +4,7 @@ import {
   calculateCartQuantity,
 } from "/js/cart.js";
 import { products } from "/js/products.js";
-import { formatCurrency } from "/js/money.js";
+// import { formatCurrency } from "/js/money.js"; i set this to products.js
 let productsHTML = "";
 products.forEach((product) => {
   productsHTML += `

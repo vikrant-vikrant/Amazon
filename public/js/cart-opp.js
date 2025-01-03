@@ -1,3 +1,4 @@
+//this is a OOP version of cart it will use to crate a new whole new cart
 function Cart(localStoragekey) {
   const cart = {
     cartItems: undefined,

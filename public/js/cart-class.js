@@ -1,3 +1,4 @@
+//class = object generater;
 class Cart {
   cartItems;
   #localStoragekey;
@@ -103,8 +104,11 @@ class Cart {
 const cart = new Cart("cart-oop");
 const BusinessCart = new Cart("cart-business");
 
-BusinessCart.localStoragekey = "cart-oop";
-BusinessCart.loadFromStorage();
+// cart.localStoragekey = "cart-oop";
+// BusinessCart.localStoragekey = "cart-business";
+
+// Cart.loadFromStorage();
+// BusinessCart.loadFromStorage();
 
 console.log(cart);
 console.log(BusinessCart);

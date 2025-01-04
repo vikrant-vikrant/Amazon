@@ -1,9 +1,6 @@
 import {
-  cart,
-  removeFromCart,
-  calculateCartQuantity,
-  updateQuantity,
-} from "/js/cart.js";
+  cart
+} from "/js/cart-class.js";
 import { getProduct } from "/js/products.js";
 import { formatCurrency } from "/js/money.js";
 import { deliveryOptions, calculateDeliveryDate } from "/js/deliveryOptions.js";
@@ -11,7 +8,7 @@ import { renderPaymentSummary } from "./paymentSummery.js";
 
 export function renderOrderSummary() {
   let cartSummaryHtml = "";
-  cart.forEach((cartItem) => {
+  cart.cartItems.forEach((cartItem) => {
     const productId = cartItem.productId;
     const matchingProduct = getProduct(productId);
     const dateString = calculateDeliveryDate(7);
@@ -101,13 +98,13 @@ export function renderOrderSummary() {
   document.querySelectorAll(".js-delete-link").forEach((link) => {
     link.addEventListener("click", () => {
       const { productId } = link.dataset;
-      removeFromCart(productId);
+      cart.removeFromCart(productId);
       renderOrderSummary();
     });
   });
   updateCartQuantity();
   function updateCartQuantity() {
-    const cartQuantity = calculateCartQuantity();
+    const cartQuantity = cart.calculateCartQuantity();
     if (cartQuantity === 0) {
       document.querySelector(".js-return-to-home-link").innerHTML = `Add Items`;
       document.querySelector(
@@ -126,10 +123,10 @@ export function renderOrderSummary() {
       ).innerHTML = `${cartQuantity} Items`;
       document.querySelector(".page-title").innerHTML = `Review your order`;
       document.querySelector(".js-cart-quantity").innerHTML =
-        calculateCartQuantity();
+        cart.calculateCartQuantity();
       document.querySelector(
         ".js-cart-summary-quantity"
-      ).innerHTML = `Items (${calculateCartQuantity()}) :`;
+      ).innerHTML = `Items (${cart.calculateCartQuantity()}) :`;
       document.querySelector(
         ".js-cart-summary-total"
       ).innerHTML = `$${formatCurrency(
@@ -174,7 +171,7 @@ export function renderOrderSummary() {
         alert("Quantity must be at least 0 and less than 1000");
         return;
       }
-      updateQuantity(productId, newQuantity);
+      cart.updateQuantity(productId, newQuantity);
       const quantityLabel = document.querySelector(
         `.js-quantity-label-${productId}`
       );

@@ -1,10 +1,7 @@
 import {
-  addToCart,
-  updateCartQuantity,
-  calculateCartQuantity,
-} from "/js/cart.js";
+  cart
+} from "/js/cart-class.js";
 import { products } from "/js/products.js";
-// import { formatCurrency } from "/js/money.js"; i set this to products.js
 let productsHTML = "";
 products.forEach((product) => {
   productsHTML += `
@@ -57,13 +54,13 @@ document.querySelector(".js-products-grid").innerHTML = productsHTML;
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
   button.addEventListener("click", () => {
     const { productId } = button.dataset;
-    addToCart(productId);
-    updateCartQuantity(productId);
+    cart.addToCart(productId);
+    cart.updateCartQuantity(productId);
   });
 });
-if (calculateCartQuantity() === 0) {
+if (cart.calculateCartQuantity() === 0) {
   document.querySelector(".js-cart-quantity").innerHTML = "";
 } else {
   document.querySelector(".js-cart-quantity").innerHTML =
-    calculateCartQuantity();
+    cart.calculateCartQuantity();
 }

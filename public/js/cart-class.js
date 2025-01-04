@@ -74,7 +74,7 @@ class Cart {
   updateCartQuantity(productId) {
     let addedMessageTimeoutId;
     document.querySelector(".js-cart-quantity").innerHTML =
-      calculateCartQuantity();
+      this.calculateCartQuantity();
     const addedMessage = document.querySelector(
       `.js-added-to-cart-${productId}`
     );
@@ -100,12 +100,4 @@ class Cart {
   }
 }
 
-const cart = new Cart("cart-oop");
-const BusinessCart = new Cart("cart-business");
-
-BusinessCart.localStoragekey = "cart-oop";
-BusinessCart.loadFromStorage();
-
-console.log(cart);
-console.log(BusinessCart);
-console.log(BusinessCart instanceof Cart);
+export const cart = new Cart("cart-oop");

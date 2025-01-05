@@ -1,6 +1,4 @@
-import {
-  cart
-} from "/js/cart-class.js";
+import { cart } from "/js/cart-class.js";
 import { getProduct } from "/js/products.js";
 import { formatCurrency } from "/js/money.js";
 import { deliveryOptions, calculateDeliveryDate } from "/js/deliveryOptions.js";

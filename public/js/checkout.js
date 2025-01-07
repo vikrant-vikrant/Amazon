@@ -2,23 +2,22 @@ import { renderOrderSummary } from "./checkout/orderSummary.js";
 renderOrderSummary();
 
 export class Car {
-  brand;
-  model;
+  #brand;
+  #model;
   speed;
   isTrunkOpen;
 
   constructor(brand, model, speed = 0, isTrunkOpen = false) {
-    this.brand = brand;
-    this.model = model;
+    this.#brand = brand;
+    this.#model = model;
     this.speed = speed;
     this.isTrunkOpen = isTrunkOpen;
   }
   displayInfo() {
-
-    const trunkStatus = this.isTrunkOpen ? 'open' : 'closed';
+    const trunkStatus = this.isTrunkOpen ? "open" : "closed";
 
     console.log(
-      `${this.model} by ${this.brand}, Speed: ${
+      `${this.#model} by ${this.#brand}, Speed: ${
         this.speed
       } Km/h, Trunk: ${trunkStatus}`
     );
@@ -51,32 +50,36 @@ const car = new Car("Toyoto", "Corolla");
 car.go();
 car.brake();
 car.openTrunk();
-console.log(car)
+console.log(car);
 car.displayInfo();
 
-class RaceCar extends Car{
+class RaceCar extends Car {
   acceleration;
-  constructor(brand,model,acceleration){
-    super(brand,model);
+  constructor(brand, model, speed, acceleration = 0) {
+    super(brand, model, speed);
     this.acceleration = acceleration;
   }
-  go(){
-    this.acceleration += this.acceleration;
-    if(this.acceleration < 300){
+  go() {
+    this.speed += this.acceleration;
+    if (this.acceleration < 300) {
       this.acceleration == 300;
     }
   }
-  info(){
-    console.log(`brand: ${this.model}, model: ${this.model}, acceleration: ${this.acceleration}`)
+  info() {
+    console.log(
+      `brand: ${this.brand}, model: ${this.model}, acceleration: ${this.speed}`
+    );
+  }
+  openTrunk() {
+    console.log("Race cars do not have a trunk");
+  }
+  closeTrunk() {
+    console.log("Race cars do not have a trunk");
   }
 }
 
-const race = new RaceCar('McLaren','F1',20)
-race.go();
-race.go();
-race.go();
-console.log(race);
+const race = new RaceCar("McLaren", "F1", 20, 3);
+// race.go();
+// race.go();
+// console.log(race);
 race.info();
-
-
-

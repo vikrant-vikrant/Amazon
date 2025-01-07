@@ -14,10 +14,13 @@ export class Car {
     this.isTrunkOpen = isTrunkOpen;
   }
   displayInfo() {
+
+    const trunkStatus = this.isTrunkOpen ? 'open' : 'closed';
+
     console.log(
       `${this.model} by ${this.brand}, Speed: ${
         this.speed
-      } Km/h, Trunk: ${this.openTrunk()}`
+      } Km/h, Trunk: ${trunkStatus}`
     );
   }
   go() {
@@ -44,10 +47,36 @@ export class Car {
   }
 }
 
-const Car1 = new Car("Toyoto", "Corolla");
-Car1.openTrunk();
-Car1.go();
-Car1.closeTrunk();
-Car1.go();
+const car = new Car("Toyoto", "Corolla");
+car.go();
+car.brake();
+car.openTrunk();
+console.log(car)
+car.displayInfo();
 
-console.log(Car1);
+class RaceCar extends Car{
+  acceleration;
+  constructor(brand,model,acceleration){
+    super(brand,model);
+    this.acceleration = acceleration;
+  }
+  go(){
+    this.acceleration += this.acceleration;
+    if(this.acceleration < 300){
+      this.acceleration == 300;
+    }
+  }
+  info(){
+    console.log(`brand: ${this.model}, model: ${this.model}, acceleration: ${this.acceleration}`)
+  }
+}
+
+const race = new RaceCar('McLaren','F1',20)
+race.go();
+race.go();
+race.go();
+console.log(race);
+race.info();
+
+
+

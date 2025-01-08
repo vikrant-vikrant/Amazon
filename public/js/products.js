@@ -30,6 +30,9 @@ class Product {
   extraInfoHTML() {
     return "";
   }
+  InstrctionsWarrantyLink() {
+    return "";
+  }
 }
 class Clothing extends Product {
   sizeChartLink;
@@ -46,7 +49,7 @@ class Clothing extends Product {
     `;
   }
 }
-class appliances extends Product {
+class Appliances extends Product {
   instructionsLink;
   warrantyLink;
   constructor(productDetails) {
@@ -54,8 +57,7 @@ class appliances extends Product {
     this.instructionsLink = productDetails.instructionsLink;
     this.warrantyLink = productDetails.warrantyLink;
   }
-  extraInfoHTML() {
-    //super.extraInfoHTML();
+  InstrctionsWarrantyLink() {
     return `
     <a href="${this.instructionsLink}" target="_blank">
       Instructions
@@ -182,7 +184,8 @@ export const products = [
     priceCents: 1899,
     keywords: ["toaster", "kitchen", "appliances"],
     type: "appliances",
-    instructionsLink: "images/appliance-instructions.png"
+    instructionsLink: "images/appliance-instructions.png",
+    warrantyLink: "images/appliance-warranty.png",
   },
   {
     id: "3ebe75dc-64d2-4137-8860-1f5a963e534b",
@@ -317,6 +320,9 @@ export const products = [
     },
     priceCents: 3074,
     keywords: ["water boiler", "appliances", "kitchen"],
+    type: "appliances",
+    instructionsLink: "images/appliance-instructions.png",
+    warrantyLink: "images/appliance-warranty.png",
   },
   {
     id: "6b07d4e7-f540-454e-8a1e-363f25dbae7d",
@@ -530,6 +536,9 @@ export const products = [
     },
     priceCents: 2250,
     keywords: ["coffeemakers", "kitchen", "appliances"],
+    type: "appliances",
+    instructionsLink: "images/appliance-instructions.png",
+    warrantyLink: "images/appliance-warranty.png",
   },
   {
     id: "02e3a47e-dd68-467e-9f71-8bf6f723fdae",
@@ -574,6 +583,9 @@ export const products = [
     },
     priceCents: 10747,
     keywords: ["food blenders", "kitchen", "appliances"],
+    type: "appliances",
+    instructionsLink: "images/appliance-instructions.png",
+    warrantyLink: "images/appliance-warranty.png",
   },
   {
     id: "36c64692-677f-4f58-b5ec-0dc2cf109e27",
@@ -620,7 +632,7 @@ export const products = [
     keywords: ["clean", "presonal care", "mens"],
   },
   {
-    id: "bc2847e9-5323-403f-b7cf-57fde044a955",
+    id: "bc2847e9-5323-103f-b7cf-57fde044a955",
     image: "images/products/fit.jpg",
     name: "For your Fitness needs",
     rating: {
@@ -640,9 +652,12 @@ export const products = [
     },
     priceCents: 1500,
     keywords: ["light", "rgb", "gitter"],
+    type: "appliances",
+    instructionsLink: "images/appliance-instructions.png",
+    warrantyLink: "images/appliance-warranty.png",
   },
   {
-    id: "bc2847e9-5323-403f-b7cf-57fde044a955",
+    id: "bc2847e9-5023-403f-b7cf-57fde044a955",
     image: "images/products/phone.jpg",
     name: "S22-Ultra SUMSANG",
     rating: {
@@ -651,6 +666,9 @@ export const products = [
     },
     priceCents: 52400,
     keywords: ["sumsang", "phone", "ultra"],
+    type: "appliances",
+    instructionsLink: "images/appliance-instructions.png",
+    warrantyLink: "images/appliance-warranty.png",
   },
   {
     id: "bc2847e9-5323-403f-b7cf-57fde044a955",
@@ -666,22 +684,8 @@ export const products = [
 ].map((productDetails) => {
   if (productDetails.type === "clothing") {
     return new Clothing(productDetails);
+  } else if (productDetails.type === "appliances") {
+    return new Appliances(productDetails);
   }
   return new Product(productDetails);
 });
-
-// products.map((productDetails) => {
-//   if (productDetails.type === "clothing") {
-//     return new Clothing(productDetails);
-//   }
-//   return new Product(productDetails);
-// });
-
-
-
-// products.map((productDetails)=>{
-//   if(productDetails.type === "appliances"){
-//     return new appliances(productDetails);
-//   }
-//   return new Product(productDetails);
-// })

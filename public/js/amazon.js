@@ -1,6 +1,4 @@
-import {
-  cart
-} from "/js/cart-class.js";
+import { cart } from "/js/cart-class.js";
 import { products } from "/js/products.js";
 let productsHTML = "";
 products.forEach((product) => {
@@ -38,6 +36,7 @@ products.forEach((product) => {
             </select>
           </div>
           ${product.extraInfoHTML()}
+          ${product.InstrctionsWarrantyLink()}
           <div class="product-spacer"></div>
           <div class="added-to-cart js-added-to-cart-${product.id}">
             <img src="images/icons/checkmark.png">

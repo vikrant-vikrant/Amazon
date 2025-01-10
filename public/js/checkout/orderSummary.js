@@ -103,47 +103,39 @@ export function renderOrderSummary() {
   updateCartQuantity();
   function updateCartQuantity() {
     const cartQuantity = cart.calculateCartQuantity();
+    const updateText = (selector, text) => {
+      document.querySelector(selector).innerHTML = text;
+    };
+    const updateTotals = (totals) => {
+      updateText(".js-cart-summary-total", totals.total);
+      updateText(".js-total-before-tax", totals.totalBeforeTax);
+      updateText(".js-extimated-tax", totals.estimatedTax);
+      updateText(".js-order-total", totals.orderTotal);
+    };
     if (cartQuantity === 0) {
-      document.querySelector(".js-return-to-home-link").innerHTML = `Add Items`;
-      document.querySelector(
-        ".page-title"
-      ).innerHTML = `Your Amazon Cart is empty.`;
-      document.querySelector(".js-cart-quantity").innerHTML = "";
-      document.querySelector(".js-cart-summary-quantity").innerHTML =
-        "Items (0) :";
-      document.querySelector(".js-cart-summary-total").innerHTML = "$0.00";
-      document.querySelector(".js-total-before-tax").innerHTML = "$0.00";
-      document.querySelector(".js-extimated-tax").innerHTML = "$0.00";
-      document.querySelector(".js-order-total").innerHTML = "$0.00";
+      updateText(".js-return-to-home-link", "Add Items");
+      updateText(".page-title", "Your Amazon Cart is empty.");
+      updateText(".js-cart-quantity", "");
+      updateText(".js-cart-summary-quantity", "Items (0) :");
+      updateTotals({
+        total: "$0.00",
+        totalBeforeTax: "$0.00",
+        estimatedTax: "$0.00",
+        orderTotal: "$0.00",
+      });
     } else {
-      document.querySelector(
-        ".js-return-to-home-link"
-      ).innerHTML = `${cartQuantity} Items`;
-      document.querySelector(".page-title").innerHTML = `Review your order`;
-      document.querySelector(".js-cart-quantity").innerHTML =
-        cart.calculateCartQuantity();
-      document.querySelector(
-        ".js-cart-summary-quantity"
-      ).innerHTML = `Items (${cart.calculateCartQuantity()}) :`;
-      document.querySelector(
-        ".js-cart-summary-total"
-      ).innerHTML = `$${formatCurrency(
-        renderPaymentSummary().productPriceCents
-      )}`;
-      document.querySelector(
-        ".js-total-before-tax"
-      ).innerHTML = `$${formatCurrency(
-        renderPaymentSummary().productPriceCents
-      )}`;
-      document.querySelector(
-        ".js-extimated-tax"
-      ).innerHTML = `$${formatCurrency(
-        renderPaymentSummary().productPriceCents / 10
-      )}`;
-      document.querySelector(".js-order-total").innerHTML = `$${formatCurrency(
-        renderPaymentSummary().productPriceCents +
-          renderPaymentSummary().productPriceCents / 10
-      )}`;
+      const productPriceCents = renderPaymentSummary().productPriceCents;
+      const formattedPrice = (price) => `$${formatCurrency(price)}`;
+      updateText(".js-return-to-home-link", `${cartQuantity} Items`);
+      updateText(".page-title", "Review your order");
+      updateText(".js-cart-quantity", cartQuantity);
+      updateText(".js-cart-summary-quantity", `Items (${cartQuantity}) :`);
+      updateTotals({
+        total: formattedPrice(productPriceCents),
+        totalBeforeTax: formattedPrice(productPriceCents),
+        estimatedTax: formattedPrice(productPriceCents / 10),
+        orderTotal: formattedPrice(productPriceCents + productPriceCents / 10),
+      });
     }
   }
   document.querySelectorAll(".js-update-link").forEach((link) => {

@@ -1,4 +1,5 @@
 import { renderOrderSummary } from "./checkout/orderSummary.js";
-renderOrderSummary();
-
-import '../js/backend-practice.js';
+import { loadProducts } from "./products.js";
+loadProducts(() => {
+  renderOrderSummary();
+});

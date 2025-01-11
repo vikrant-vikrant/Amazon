@@ -1,7 +1,34 @@
 import { cart } from "/js/cart-class.js";
 import { products, loadProducts } from "/js/products.js";
-loadProducts(renderProductsGrid);
 
+
+// loadProducts(renderProductsGrid);
+
+
+// new Promise((resolve, reject) => {
+//   loadProducts(() => {
+//     resolve();
+//   });
+// }).then(() => {
+//   renderProductsGrid();
+// }).catch((error) => {
+//   alert(error);
+// });
+
+
+initializeProducts();
+async function initializeProducts() {
+  try {
+    await new Promise((resolve, reject) => {
+      loadProducts(() => {
+        resolve();
+      });
+    });
+    renderProductsGrid();
+  } catch (error) {
+    alert(error);
+  }
+}
 export function renderProductsGrid() {
   let productsHTML = "";
   products.forEach((product) => {

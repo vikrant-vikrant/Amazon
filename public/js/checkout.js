@@ -5,29 +5,21 @@ import { loadProducts } from "./products.js";
 //   renderOrderSummary();
 // });
 
-//promise
-// new Promise((resolve, reject) => {
-//   loadProducts(() => {
-//     resolve();
-//   });
-// }).then(() => {
-//   renderOrderSummary();
-// }).catch((error) => {
-//   alert(error);
-// });  
-
-Promise.all([
-  new Promise((resolve) => {
-  loadProducts(() => {
-    resolve('value1');
-  });
-}),
-new Promise((resolve) => {
-  renderOrderSummary();
+new Promise((resolve, reject) => {
+  try {
+    loadProducts(() => {
+      resolve();
+    });
+  } catch (error) {
+    reject("Failed to load products.");
+  }
 })
-]).then((values) => {
-  console.log(values);
-});
+  .then(() => {
+    renderOrderSummary();
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 // initializeCart();
 // async function initializeCart() {

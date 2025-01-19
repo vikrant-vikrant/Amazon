@@ -1,21 +1,5 @@
 import { cart } from "/js/cart-class.js";
 import { products, loadProducts } from "/js/products.js";
-
-
-// loadProducts(renderProductsGrid);
-
-
-// new Promise((resolve, reject) => {
-//   loadProducts(() => {
-//     resolve();
-//   });
-// }).then(() => {
-//   renderProductsGrid();
-// }).catch((error) => {
-//   alert(error);
-// });
-
-
 initializeProducts();
 async function initializeProducts() {
   try {

@@ -1,5 +1,11 @@
 import { renderOrderSummary } from "./checkout/orderSummary.js";
-import { loadProducts } from "./products.js";
-loadProducts(() => {
-  renderOrderSummary();
-});
+import { loadProductsFetch } from "./products.js";
+initializeCheckout();
+async function initializeCheckout() {
+  try {
+    await loadProductsFetch();
+    renderOrderSummary();
+  } catch (error) {
+    alert(error);
+  }
+}

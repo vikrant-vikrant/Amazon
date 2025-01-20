@@ -702,11 +702,12 @@ export function getProduct(productId) {
   return matchingProduct;
 }
 export let products = [];
-export function loadProducts(fun) {
-  return new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest();
-    xhr.addEventListener("load", () => {
-      products = JSON.parse(xhr.response).map((productDetails) => {
+
+export function loadProductsFetch() {
+  const Promise = fetch("https://supersimplebackend.dev/products")
+    .then((response) => response.json())
+    .then((data) => {
+      products = data.map((productDetails) => {
         if (productDetails.type === "clothing") {
           return new Clothing(productDetails);
         } else if (productDetails.type === "appliances") {
@@ -714,12 +715,10 @@ export function loadProducts(fun) {
         }
         return new Product(productDetails);
       });
-      console.log("load Products"); 
-      fun();
-      resolve();
+      console.log("load Products");
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
     });
-    xhr.open("GET", "https://supersimplebackend.dev/products");
-    xhr.send();
-  });
+  return Promise;
 }
-

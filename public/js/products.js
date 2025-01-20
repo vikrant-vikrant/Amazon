@@ -718,7 +718,7 @@ export function loadProductsFetch() {
       console.log("load Products");
     })
     .catch((error) => {
-      console.error("Error fetching data:", error);
+      alert("Error fetching data:", error);
     });
   return Promise;
 }

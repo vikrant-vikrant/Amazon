@@ -1,14 +1,11 @@
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { loadProductsFetch } from "./products.js";
-async function initializeCart() {
+initializeCheckout();
+async function initializeCheckout() {
   try {
-    await new Promise((resolve, reject) => {
-      loadProductsFetch();
-      resolve();
-    });
+    await loadProductsFetch();
     renderOrderSummary();
   } catch (error) {
     alert(error);
   }
 }
-initializeCart();

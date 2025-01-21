@@ -32,6 +32,7 @@ document
 
       const order = await response.json();
       addOrder(order);
+      console.log("order placed");
     } catch (error) {
       console.log(`Unexpected error, Try again later`,error);
       alert(error);

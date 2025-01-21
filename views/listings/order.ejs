@@ -1,5 +1,24 @@
 <% layout('layouts/boilerPlate') -%>
 <title>Order</title>
+<link rel="stylesheet" href="css/order/order.css" />
 <body>
-  <h1>here is your order</h1>
+  <div class="main">
+    <h1>Your Orders</h1>
+    <div class="orderDetails">
+      <orderPlacedTotal
+        ><div class="placed">
+          <b>Order Placed:</b>
+          <p>January 21</p>
+        </div>
+        <div class="total">
+          <b>Total</b>
+          <p>$34.23</p>
+        </div>
+      </orderPlacedTotal>
+      <orderId>
+        <b>Order ID:</b>
+        <p>77d8dba6-bab2-bd79-bdf0-55d309b3e639</p>
+      </orderId>
+    </div>
+  </div>
 </body>

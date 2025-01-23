@@ -1,12 +1,38 @@
-body{
-  margin-top: 9rem;
+body {
+  margin-top: 8.4rem;
 }
-.main{
+.main {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  background-color: grey;
 }
-.orderDetails{
+h1 {
+  padding: 2rem 0;
+  margin: 0;
+}
+.order-header {
   display: flex;
+  justify-content: space-between;
+  border: 2px solid grey;
+  padding: 1.5rem 2rem;
+  background-color: #f0f2f2;
+  border-radius: 1rem;
+}
+.order-header div p {
+  margin: 0.3rem;
+}
+.order-total {
+  display: flex;
+}
+.order-total .total {
+  padding-left: 3.5rem;
+}
+.order-details-grid {
+  display: grid;
+  margin: 4rem 2.5rem;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 80px 200px;
+  gap: 10px;
+  background-color: #2196f3;
+  padding: 10px;
 }

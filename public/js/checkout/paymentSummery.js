@@ -16,26 +16,26 @@ export function renderPaymentSummary() {
   const totalPayment = formatCurrency(productPriceCents + shippingPriceCents);
   return { productPriceCents, shippingPrice, totalPayment };
 }
-document
-  .querySelector(".js-place-order")
-  .addEventListener("click", async () => {
-    try {
-      const response = await fetch("https://supersimplebackend.dev/orders", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          cart: cart,
-        }),
-      });
+// document
+//   .querySelector(".js-place-order")
+//   .addEventListener("click", async () => {
+//     try {
+//       const response = await fetch("https://supersimplebackend.dev/orders", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({
+//           cart: cart,
+//         }),
+//       });
 
-      const order = await response.json();
-      addOrder(order);
-      console.log("order placed");
-    } catch (error) {
-      console.log(`Unexpected error, Try again later`,error);
-      alert(error);
-    }
-    // window.location.href = 'orders.html';
-  });
+//       const order = await response.json();
+//       addOrder(order);
+//       console.log("order placed");
+//     } catch (error) {
+//       console.log(`Unexpected error, Try again later`,error);
+//       alert(error);
+//     }
+//     // window.location.href = 'orders.html';
+//   });

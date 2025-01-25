@@ -1,14 +1,14 @@
 import { cart } from "/js/cart-class.js";
 import { getProduct } from "./products.js";
 import { calculateDeliveryDate } from "./deliveryOptions.js";
-renderCartSummary();
-function renderCartSummary() {
-  let cartSummaryHtml = "";
+// renderCartSummary();
+export function renderCartSummary() {
+  let orderSummaryHtml = "";
   cart.cartItems.forEach((cartItem) => {
     const productId = cartItem.productId;
     const matchingProduct = getProduct(productId);
     const dateString = calculateDeliveryDate(7);
-    cartSummaryHtml += `
+    orderSummaryHtml += `
     <div class="product-img">
           <img src=/${matchingProduct.image} alt="img" />
         </div>
@@ -22,11 +22,14 @@ function renderCartSummary() {
           </button>
         </div>
         <div class="track">
-          <button>Track package</button>
+          <button><i class="fa-solid fa-map-location-dot"></i>&nbsp;&nbsp;&nbsp;Track package</button>
         </div>`;
   });
-  document.querySelector(".order-details-grid").innerHTML = cartSummaryHtml;
-}
+  const orderDetailsGrid = document.querySelector(".order-details-grid");
+  if (orderDetailsGrid) {
+    orderDetailsGrid.innerHTML = orderSummaryHtml;
+  };
+};
 document.querySelectorAll(".product-info button").forEach((button) => {
   button.addEventListener("click", () => {
     console.log("add ot cart");

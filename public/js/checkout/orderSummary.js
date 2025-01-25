@@ -115,7 +115,12 @@ export function renderOrderSummary() {
       document.querySelector(".js-total-before-tax").innerHTML = "$0.00";
       document.querySelector(".js-extimated-tax").innerHTML = "$0.00";
       document.querySelector(".js-order-total").innerHTML = "$0.00";
+      document.querySelector(".payment-summary button").disabled = true;
+      document.querySelector(".payment-summary button").style.background =
+        "#ffeb89";
+      document.querySelector(".view-products").classList.remove("display-none");
     } else {
+      document.querySelector(".view-products").classList.add("display-none");
       document.querySelector(
         ".js-return-to-home-link"
       ).innerHTML = `${cartQuantity} Items`;

@@ -1,5 +1,6 @@
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { loadProductsFetch } from "./products.js";
+import { renderCartSummary } from "./returnOrder.js";
 initializeCheckout();
 async function initializeCheckout() {
   try {
@@ -9,3 +10,6 @@ async function initializeCheckout() {
     alert(error);
   }
 }
+document.querySelector(".js-place-order").addEventListener("click", () => {
+  renderCartSummary();
+});

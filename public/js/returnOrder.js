@@ -10,16 +10,16 @@ export function renderCartSummary() {
     const dateString = calculateDeliveryDate(7);
     orderSummaryHtml += `
       <div class="cart-item-details-grid">
-        <img class="product-image"
+        <img class="orderProduct-image"
           src="${matchingProduct.image}">
-        <div class="cart-item-details">
-          <div class="product-name">
+        <div class="orderCart-item-details">
+          <div class="orderProduct-name">
             ${matchingProduct.name}
           </div>
           <div class="delivery-date">
             Arriving on : ${dateString}
           </div>
-          <div class="product-quantity">
+          <div class="orderProduct-quantity">
             <span>
               Quantity : <span class="quantity-label js-quantity-label-${matchingProduct.id}">${cartItem.quantity}</span>
             </span>
@@ -30,7 +30,7 @@ export function renderCartSummary() {
           </button> 
         </div>
         <div>
-          <button class="track">
+          <button class="orderTrack">
             <i class="fa-solid fa-map-location-dot"></i><span>Track package</span>
           </button>
         </div>

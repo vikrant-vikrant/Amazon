@@ -10,6 +10,9 @@ async function initializeCheckout() {
     alert(error);
   }
 }
-document.querySelector(".js-place-order").addEventListener("click", () => {
-  renderCartSummary();
-});
+// document.querySelector(".js-place-order").addEventListener("click", () => {
+//   //why renderCartSummary not working in returnOrder.js
+//   renderCartSummary();
+//   console.log("renderCartSummary")
+// });
+// renderCartSummary();

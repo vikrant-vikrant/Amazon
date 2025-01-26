@@ -1,17 +1,19 @@
 body {
   margin-top: 8.4rem;
 }
-.main{
-  width: 80%;
+.main {
+  width: 70%;
+  max-width: 850px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5rem;
 }
-h1 {
+.page-title {
+  font-weight: 700;
+  font-size: 22px;
   padding: 2rem 0;
-  margin: 0;
 }
-.order-details{
+.order-grid {
   border: 2px solid #d5d9d9;
   border-radius: 1rem;
 }
@@ -33,24 +35,42 @@ h1 {
 .order-total .total {
   padding-left: 4rem;
 }
-.order-details-grid {
+.cart-item-container {
+  border: 1px solid rgb(222, 222, 222);
+  border-radius: 4px;
+  padding: 18px;
+  background-color: #fff;
+  margin-bottom: 12px;
+}
+.cart-item-details-grid {
   display: grid;
   grid-template-columns: 9rem 1fr 18rem;
-  row-gap: 20px;
+  grid-template-rows: auto auto;
+  row-gap: 4rem;
   column-gap: 30px;
-  margin: 1.5rem 2rem;
   align-items: center;
-  grid-template-rows: auto auto auto;
+  margin: 1.5rem 2rem;
 }
-.product-img img{
-  max-width: 9rem;
-  max-height: 9rem;
+
+/* @media (max-width: 1000px) {
+  .cart-item-details-grid {
+    grid-template-columns: 100px 1fr;
+    row-gap: 30px;
+    }
+} */
+.product-image {
+  width: 100%;
 }
-.product-info p{
-  margin: 5px 0;
+.product-name {
+  font-weight: 700;
+  margin-bottom: 8px;
 }
-.product-info button{
-  background-color: rgba(247, 202, 20, .8);
+.cart-item-details .product-quantity {
+  margin-top: 0.5rem;
+}
+.cart-item-details button,
+.track {
+  background-color: rgba(247, 202, 20, 0.8);
   border: none;
   height: 3rem;
   width: 12rem;
@@ -59,27 +79,26 @@ h1 {
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5)
+  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+  margin-top: 8px;
 }
-.product-info button:hover{
+.cart-item-details button:hover {
   background-color: rgb(247, 202, 20);
-
 }
-.product-info button img{
+.cart-item-details button img {
   height: 2rem;
 }
-.product-info button span{
+.cart-item-details button span {
   padding-left: 1rem;
 }
-.track button{
+.track {
   background-color: white;
   border: 2px solid #d5d9d9;
-  height: 3rem;
   width: 15rem;
-  font-size: larger;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5)
 }
-.track button:hover{
+.track span {
+  margin-left: 1rem;
+}
+.track:hover {
   background-color: #f7fafa;
 }

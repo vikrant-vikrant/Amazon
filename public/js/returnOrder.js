@@ -31,7 +31,7 @@ export function renderCartSummary() {
         </div>
         <div>
           <button class="orderTrack">
-            <i class="fa-solid fa-map-location-dot"></i><span>Track package</span>
+            <i class="fa-solid fa-map-location-dot"></i><span><a href="/tracking">Track package</a></span>
           </button>
         </div>
       </div>`;
@@ -46,7 +46,7 @@ document.querySelectorAll(".buy-again").forEach((button) => {
     console.log("add ot cart");
   });
 });
-document.querySelectorAll(".track").forEach((button) => {
+document.querySelectorAll(".orderTrack").forEach((button) => {
   button.addEventListener("click", () => {
     console.log("track order");
   });

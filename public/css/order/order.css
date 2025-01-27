@@ -92,6 +92,9 @@ body {
 .orderTrack span {
   margin-left: 1rem;
 }
+.orderTrack span a{
+  text-decoration: none;
+}
 .orderTrack:hover {
   background-color: #f7fafa;
 }

@@ -1,0 +1,23 @@
+<% layout('layouts/boilerPlate') -%>
+<title>Track order</title>
+<link rel="stylesheet" href="css/order/tracking.css" />
+<body>
+  <div class="main">
+    <a href="/order">View all order</a>
+    <div class="page-title"></div>
+    <div class="order-grid">
+      <div class="order-summary js-order-summary"></div>
+    </div>
+    <div class="tracking-delivery">
+      <div class="process">
+        <div>Preparing</div>
+        <div>Shipped</div>
+        <div>Delivered</div>
+      </div>
+      <div class="percentage-bar">
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/js/tracking.js"></script>
+</body>

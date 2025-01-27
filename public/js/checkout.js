@@ -1,6 +1,6 @@
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { loadProductsFetch } from "./products.js";
-import { renderCartSummary } from "./returnOrder.js";
+// import { renderCartSummary } from "./returnOrder.js";
 initializeCheckout();
 async function initializeCheckout() {
   try {
@@ -11,8 +11,8 @@ async function initializeCheckout() {
   }
 }
 // document.querySelector(".js-place-order").addEventListener("click", () => {
-//   //why renderCartSummary not working in returnOrder.js
-//   renderCartSummary();
-//   console.log("renderCartSummary")
+  //why renderCartSummary not working in returnOrder.js
+  // console.log("renderCartSummary")
+  // renderCartSummary();
 // });
 // renderCartSummary();

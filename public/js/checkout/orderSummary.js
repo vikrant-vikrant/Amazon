@@ -103,6 +103,9 @@ export function renderOrderSummary() {
   updateCartQuantity();
   function updateCartQuantity() {
     const cartQuantity = cart.calculateCartQuantity();
+    const updateText = (selector, text) => {
+      document.querySelector(selector).innerHTML = text;
+    };
     if (cartQuantity === 0) {
       document.querySelector(".js-return-to-home-link").innerHTML = `Add Items`;
       document.querySelector(

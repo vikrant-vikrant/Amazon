@@ -1,7 +1,5 @@
 <footer>
-  <a href="/amazon">
-    <div class="foot-panell">Back to top</div>
-  </a>
+  <div class="foot-panell" onclick="topFunction()">Back to top</div>
   <div class="panel2">
     <ul>
       <p>Get to know us</p>
@@ -80,3 +78,9 @@
     <div class="copyright">© 1996-2024, Amazon.com, Inc. or its affiliates</div>
   </div>
 </footer>
+<script>
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>

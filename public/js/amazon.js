@@ -1,8 +1,14 @@
 import { cart } from "/js/cart-class.js";
 import { products, loadProductsFetch } from "/js/products.js";
-loadProductsFetch().then(() => {
-  renderProductsGrid();
-});
+initializeHomePage();
+async function initializeHomePage() {
+  try {
+    await loadProductsFetch();
+    renderProductsGrid();
+  } catch (error) {
+    alert(error);
+  }
+}
 export function renderProductsGrid() {
   let productsHTML = "";
   products.forEach((product) => {

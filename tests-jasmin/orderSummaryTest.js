@@ -1,5 +1,4 @@
 import {renderOrderSummary} from '/checkout/orderSummary.js';
-import {loadFromStorage} from '/checkout/orderSummary.js';
 
 describe('test suite: renderOrdersummary',()=>{
   it('displays the cart',()=>{
@@ -12,8 +11,6 @@ describe('test suite: renderOrdersummary',()=>{
         deliveryOptionId:'1',
       }]);
     });
-    loadFromStorage();
-
     renderOrderSummary();
 
   })

@@ -1,0 +1,55 @@
+body {
+  margin-top: 10rem;
+}
+.main {
+  width: 70%;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+.page-title {
+  font-weight: 700;
+  font-size: 22px;
+  padding: 1.5rem 0;
+}
+.cart-item-details-grid {
+  display: grid;
+  row-gap: 1rem;
+  column-gap: 30px;
+  align-items: center;
+  margin: 0rem 0;
+}
+.orderProduct-image {
+  width: 20%;
+  margin: 1rem 0;
+}
+.orderProduct-name {
+  font-weight: 700;
+}
+.orderCart-item-details .orderProduct-quantity {
+  margin-top: 0.5rem;
+}
+.tracking-delivery .process {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.process div {
+  margin: 1rem;
+}
+.percentage-bar,
+.percentage-bar div {
+  border-radius: 1.5rem;
+  width: 100%;
+  height: 2.5rem;
+}
+.percentage-bar {
+  border: 2px solid rgb(222, 222, 222);
+}
+.percentage-bar div {
+  width: 60%;
+  background-color: #008000;
+  background: linear-gradient(90deg, #115d33, #228b22, #4cbb17);
+}

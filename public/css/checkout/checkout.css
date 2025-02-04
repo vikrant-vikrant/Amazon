@@ -65,7 +65,23 @@
   padding-left: 8rem;
   padding-right: 8rem;
 }
-
+.view-products {
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  background-color: rgba(247, 202, 0, 0.8);
+  margin: 0rem 8rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+}
+.view-products:hover {
+  background-color: #f7ca00;
+}
+.display-none{
+  display: none;
+}
 .checkout-grid {
   display: grid;
   grid-template-columns: 1fr 450px;
@@ -239,9 +255,17 @@
   border: none;
   font-size: 1.3rem;
   font-weight: 500;
-  background-color: #f7ca00;
+  background-color: rgba(247, 202, 0, 0.8);
   margin-top: 11px;
   margin-bottom: 15px;
+  cursor: pointer;
+}
+.place-order-button:hover {
+  background-color: #f7ca00;
+}
+.place-order-button a,.view-products a {
+  text-decoration: none;
+  color: black;
 }
 .quantity-input {
   width: 30px;

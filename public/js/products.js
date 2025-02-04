@@ -1,13 +1,16 @@
 import { formatCurrency } from "/js/money.js";
-export function getProduct(productId) {
-  let matchingProduct;
-  products.forEach((product) => {
-    if (product.id === productId) {
-      matchingProduct = product;
-    }
-  });
-  return matchingProduct;
-}
+// export function getProduct(productId) {
+//   loadProducts(()=>{
+//     let matchingProduct;
+//     products.forEach((product) => {
+//       if (product.id === productId) {
+//         matchingProduct = product;
+//       }
+//     });
+//     console.log(matchingProduct);
+//     return matchingProduct;
+//   });
+// }
 class Product {
   id;
   image;
@@ -68,7 +71,7 @@ class Appliances extends Product {
     `;
   }
 }
-export const products = [
+const kaka = [
   {
     id: "e43608ze-6aa0-4b85-b27f-e1d07eb67z16",
     image: "images/products/Chanakya Neeti.jpg",
@@ -689,3 +692,33 @@ export const products = [
   }
   return new Product(productDetails);
 });
+export function getProduct(productId) {
+  let matchingProduct;
+  kaka.forEach((product) => {
+    if (product.id === productId) {
+      matchingProduct = product;
+    }
+  });
+  return matchingProduct;
+}
+export let products = [];
+
+export function loadProductsFetch() {
+  const Promise = fetch("https://supersimplebackend.dev/products")
+    .then((response) => response.json())
+    .then((data) => {
+      products = data.map((productDetails) => {
+        if (productDetails.type === "clothing") {
+          return new Clothing(productDetails);
+        } else if (productDetails.type === "appliances") {
+          return new Appliances(productDetails);
+        }
+        return new Product(productDetails);
+      });
+      console.log("load Products");
+    })
+    .catch((error) => {
+      alert("Error fetching data:", error);
+    });
+  return Promise;
+}

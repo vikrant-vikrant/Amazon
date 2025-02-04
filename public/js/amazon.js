@@ -1,8 +1,18 @@
 import { cart } from "/js/cart-class.js";
-import { products } from "/js/products.js";
-let productsHTML = "";
-products.forEach((product) => {
-  productsHTML += `
+import { products, loadProductsFetch } from "/js/products.js";
+initializeHomePage();
+async function initializeHomePage() {
+  try {
+    await loadProductsFetch();
+    renderProductsGrid();
+  } catch (error) {
+    alert(error);
+  }
+}
+export function renderProductsGrid() {
+  let productsHTML = "";
+  products.forEach((product) => {
+    productsHTML += `
     <div class="product-container ">
           <div class="product-image-container">
             <img class="product-image"
@@ -48,18 +58,19 @@ products.forEach((product) => {
           </button>
         </div>
   `;
-});
-document.querySelector(".js-products-grid").innerHTML = productsHTML;
-document.querySelectorAll(".js-add-to-cart").forEach((button) => {
-  button.addEventListener("click", () => {
-    const { productId } = button.dataset;
-    cart.addToCart(productId);
-    cart.updateCartQuantity(productId);
   });
-});
-if (cart.calculateCartQuantity() === 0) {
-  document.querySelector(".js-cart-quantity").innerHTML = "";
-} else {
-  document.querySelector(".js-cart-quantity").innerHTML =
-    cart.calculateCartQuantity();
+  document.querySelector(".js-products-grid").innerHTML = productsHTML;
+  document.querySelectorAll(".js-add-to-cart").forEach((button) => {
+    button.addEventListener("click", () => {
+      const { productId } = button.dataset;
+      cart.addToCart(productId);
+      cart.updateCartQuantity(productId);
+    });
+  });
+  if (cart.calculateCartQuantity() === 0) {
+    document.querySelector(".js-cart-quantity").innerHTML = "";
+  } else {
+    document.querySelector(".js-cart-quantity").innerHTML =
+      cart.calculateCartQuantity();
+  }
 }

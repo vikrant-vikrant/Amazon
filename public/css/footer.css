@@ -6,27 +6,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: underline #37475a;
 }
 .foot-panell:hover {
   background-color: #485769;
   text-decoration: underline #485769;
-}
-.foot-panell2 {
-  background-color: #222f3d;
-  height: 300px;
-  color: white;
-  display: flex;
-  justify-content: space-evenly;
 }
 .panel2 {
   background-color: #222f3d;
   color: white;
   display: flex;
   justify-content: space-evenly;
-}
-.panel2 ul a {
-  cursor: pointer;
 }
 ul {
   margin-top: 4rem;
@@ -39,6 +28,7 @@ ul a {
   font-size: 1rem;
   margin-top: 0.8rem;
   color: #dddddd;
+  cursor: pointer;
 }
 ul a:hover {
   text-decoration: underline;
